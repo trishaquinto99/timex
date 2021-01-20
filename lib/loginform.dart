@@ -14,7 +14,7 @@ InputDecoration txtDecoration(var str){
 		fillColor: Colors.white,
 		filled: true,
 		hintText: str,
-		border: OutlineInputBorder(borderRadius:BorderRadius.circular(20)),
+		border: OutlineInputBorder(borderRadius:BorderRadius.circular(10)),
 		contentPadding: EdgeInsets.fromLTRB(15,15,10,8),
 		
 	);

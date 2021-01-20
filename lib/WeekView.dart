@@ -269,35 +269,6 @@ class _MyWeekViewState extends State<MyWeekView> {
           ],
         ),
 
-        //  Container(
-        //   padding: EdgeInsets.fromLTRB(167, 700, 50, 50),
-        //           child:FloatingActionButton (
-        //              child:Icon(Icons.add,size: 50,),
-        //              onPressed: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => MyHomePage(title: 'Create Task')),
-        //     );
-        //     setState() {
-        //       build(context);
-        //     }
-        //   },
-        //           )
-        //  ),
-        //  Positioned(
-        //    bottom: 8,
-        //    child: Container(
-        //      height: 60,
-        //      width: size.width,
-        //      child: Row(
-        //        mainAxisAlignment: MainAxisAlignment.center,
-        //        children: [
-        //          CircleAvatar(
-        //            radius: 50,
-        //            child: Icon(Icons.add)),
-        //        ],
-        //      ),
-        //    )),
       ]),
 
       // SAMPLE QUERIES
@@ -659,9 +630,9 @@ class _DayViewState extends State<DayView> {
       var timeEnd = item['end_time'].substring(11, 16);
       
       // Get time difference
-      var tstart = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['initial_time']);
       var tend = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['end_time']);
-      var _diff = tstart.difference(tend);
+      var tstart = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['initial_time']);
+      var _diff = tend.difference(tstart);
       var diff = _diff.inHours;
 
 
@@ -724,9 +695,9 @@ class _DayViewState extends State<DayView> {
 
     for (var item in taskList) {
       // Get time difference
-      var tstart = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['initial_time']);
       var tend = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['end_time']);
-      var _diff = tstart.difference(tend);
+      var tstart = new DateFormat("yyyy-MM-dd hh:mm:ss").parse(item['initial_time']);
+      var _diff = tend.difference(tstart);
       var diff = _diff.inHours;
 
       data[item['task']] = diff.toDouble();

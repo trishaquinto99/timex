@@ -383,12 +383,5 @@ class _SecondRouteState extends State<SecondRoute> {
 
     
     Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
-    // MyHomePage.theUser
-    //     .createTask(this.taskName, this.days, times, this.repeats);
-    // Navigator.of(context).pop();
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => WeekView()),
-    // );
   }
 }
